@@ -1,0 +1,14 @@
+# basic gitignore
+# extend as project expands
+
+# log files/dir
+*.log
+logs/
+
+# modules and build-dir
+node_modules/
+dist/
+
+# cache dirs
+.npm/
+.eslintcache/
