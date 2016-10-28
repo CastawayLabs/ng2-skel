@@ -14,4 +14,4 @@ import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/router';
 
-import 'ng2-bootstrap';
+import 'ng2-bootstrap/ng2-bootstrap';

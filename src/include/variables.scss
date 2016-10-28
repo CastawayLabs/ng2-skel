@@ -1,0 +1,23 @@
+// Variables for overriding default settings in imported vendor SCSS packages
+
+// -- Font-Awesome Overrides --
+
+// --------------------------------- IMPORTANT ---------------------------------
+// This variable is set so Webpack file-loader knows where to copy the font
+// files from. Note that the ../root.scss file will go through:
+//
+// 1-  Sass Loader: compiles Sass to CSS
+// 2-  PostCSS Loader: autoprefixes the CSS
+// 3-  CSS Loader: parses the CSS, treats each @import and url() as a module
+// 3a- File Loader: copies the modules (fonts) to dist dir
+//
+// If the default font-path '../fonts' is used, the File Loader will be looking
+// at font files in ../fonts (relative to ../root.scss) which doesn't exist
+//
+// When it's set to the following value, the File Loader will copy the file to
+// dist/fonts/ from the correct location (! relative to ../root.scss) and CSS
+// Loader will change the URL's to the files, to match dist/fonts/
+// -----------------------------------------------------------------------------
+$fa-font-path: "../node_modules/font-awesome/fonts";
+
+// -- Bootstrap Overrides --
