@@ -8,12 +8,12 @@ $ cd project-name
 
 $ npm install
 
-# npm scripts
-$ npm run make           # compiles the app to dist/
+# some npm scripts
+$ npm run make           # runs webpack and compiles project to dist
 $ npm run make:prod      # same, but production version
-$ npm run watch          # watches src/ and compiles on change
-$ npm run dev            # same, but with live-reload (BrowserSync)
-$ npm run clean          # cleans up logs, modules and build dirs
+$ npm run watch          # runs webpack in watch mode
+$ npm run clean          # cleans up npm logs and dist/ dir
+$ npm run clean.repo     # full clean-up, including nuking node_modules
 $ npm run lint           # lints all JS and TS code in project
 ```
 
@@ -22,16 +22,14 @@ $ npm run lint           # lints all JS and TS code in project
   recently implemented ES6 features, so Node.js versions lesser than v6 will
   probably fail to run it. For best results, use the latest (not LTS) version
   of Node.js.
-- Minor issue with `ng-bootstrap` (peer dependencies versions mismatch) may
-  cause errors on `$ npm install`. Hopefully it will be fixed soon.
-  See [here](https://github.com/valor-software/ng2-bootstrap/issues/1067)
-  for further details or resolution.
 - Use Bootstrap 4 which is still in alpha. Bootstrap 3 is stable and can be
-  chosen in package.json, but then Gulpfile needs to be updated to include
-  tasks for copying vendor files like fonts etc. to dist/ dir.
+  chosen in package.json (not tested).
+- **Gulp is no more.** Build system uses Webpack only. That makes adding
+  livereload support unnecessarily complex. Use some sort of static file server
+  ([Caddy](https://caddyserver.com/) is a good candidate) to serve from dist/
+  in develpment.
 - Build-system does not support testing (yet).
 
 ### To do
-- Update README.md
+- ~~Update README.md~~
 - Integrate E2E-testing into the setup
-

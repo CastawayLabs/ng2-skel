@@ -1,5 +1,9 @@
-/**
- * Root stylesheet for the project
- */
+// Root Stylesheet
 
-@import './include/bootstrap.scss';
+@import './include/variables';
+@import './include/bootstrap';
+
+// -- IMPORTANT --
+// When compiling, add 'node_modules' to includePaths or the below won't work
+
+@import 'font-awesome/scss/font-awesome';
